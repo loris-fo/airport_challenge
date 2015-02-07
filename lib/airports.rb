@@ -23,12 +23,13 @@ class Airports
 		@planes << plane
 	end
 
-	def release(plane)
+	def leaving_plane(plane)
 		@planes.delete(plane)
 	end
 
 	def full?
 		number_of_planes == capacity
 	end
+
 
 end	
