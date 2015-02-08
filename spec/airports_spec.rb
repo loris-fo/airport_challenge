@@ -29,4 +29,18 @@ describe Airports do
 		expect{airport.park(plane)}.to raise_error 'the airport is full'
 	end
 
+	it 'should accept a landing plane when the weather is sunny' do
+		expect(airport.number_of_planes).to eq(0)
+		airport.storm
+		airport.authorized_landing(plane)
+		expect(airport.number_of_planes).to eq(1)
+	end
+
+	# it 'should not accept a landing plane when a storm is brewing' do
+	# 	expect(airport.number_of_planes).to eq (0)
+	# 	airport.storm
+	# 	airport.unauthorized_landing(plane)
+	# 	expect(airport.number_of_planes).to eq (0)
+	# end
+
 end
