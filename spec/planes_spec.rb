@@ -14,7 +14,7 @@ describe Planes do
 			expect(planes.take_off!).to be_flying
 		end
 
-		it 'has a flying status when it\'s in the air' do
+		it 'should have a flying status when it\'s in the air' do
 			planes.in_the_air!
 			expect(planes.in_the_air!).to be_flying
 		end

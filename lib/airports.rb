@@ -34,11 +34,11 @@ class Airports
 	end
 
 	def authorized_landing(plane)
-		@planes << plane if sunny == true		
+		@planes << plane if storm == false		
 	end
 	
 	def unauthorized_landing(plane)
-		@planes << plane if storm == false
+		@planes << plane if storm == true
 	end
 
 end	
