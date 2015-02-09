@@ -1,8 +1,8 @@
 require_relative 'weather'
-class Airports
+class Airport
 	include Weather
 
-	DEFAULT_CAPACITY = 20
+	DEFAULT_CAPACITY = 6
 
 	def planes
 		@planes ||= []
@@ -22,11 +22,11 @@ class Airports
 
 	def park(plane)
 		raise 'the airport is full' if full?
-		@planes << plane
+		planes << plane.land!
 	end
 
 	def leaving_plane(plane)
-		@planes.delete(plane)
+		planes.delete(plane.take_off!)
 	end
 
 	def full?
@@ -38,7 +38,15 @@ class Airports
 	end
 	
 	def unauthorized_landing(plane)
-		@planes << plane if storm == true
+		@planes == number_of_planes if storm == true
+	end
+
+	def authorized_leaving(plane)
+		@planes.delete(plane) if storm == false
+	end
+
+	def unauthorized_leaving(plane)
+		@planes == number_of_planes if storm == true
 	end
 
 end	

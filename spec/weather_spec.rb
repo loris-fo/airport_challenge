@@ -8,11 +8,11 @@ describe AirportWeather do
 
 	
 	it 'should know when a storm is brewing' do
-		expect(airportweather.storm).to eq true
+		expect(airportweather.stormy_weather?).to eq true
 	end
 
 	it 'should know when the weather is sunny' do
-		expect(airportweather.storm).to eq false
+		expect(airportweather.stormy_weather?).to eq false
 	end
 
 	

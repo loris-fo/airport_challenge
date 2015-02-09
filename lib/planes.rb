@@ -1,26 +1,25 @@
-class Planes
+class Plane
 
 	def initialize
-		@flying_status = true
+		@flying = true
+		@status = :flying
 	end
 		
-
-	def in_the_air!
-		@flying_status
-		self
+	def status
+		@status
 	end
 
 	def flying?
-		@flying_status
+		@flying
 	end
 
 	def land!
-		@flying_status = false
+		@flying = false
 		self
 	end
 
 	def take_off!
-		@flying_status
+		@flying = true
 		self
 	end
 
