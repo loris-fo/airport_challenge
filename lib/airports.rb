@@ -34,19 +34,11 @@ class Airports
 	end
 
 	def authorized_landing(plane)
-		if storm == 'Sunny weather'
-			@planes << plane
-		else
-			'A storm is brewing'
-		end
+		@planes << plane if sunny == true		
 	end
 	
 	def unauthorized_landing(plane)
-		if storm == 'Storm brewing'
-			'A storm is brewing'
-		else
-			@planes << plane
-		end
+		@planes << plane if storm == false
 	end
 
 end	
